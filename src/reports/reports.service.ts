@@ -31,7 +31,7 @@ export class ReportsService {
         return await findByID;
     }
 
-    async findOneFK(idMachine:machine):Promise<report | null> {
+    async findOneFK(idMachine:number):Promise<report | null> {
         const findByFK = this.reportRepository.findOneBy({idMachine});
         if(!(await findByFK)) {
             throw new NotFoundException({message: 'Machine ID does not exist'});

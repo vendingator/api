@@ -24,10 +24,10 @@ export class product {
 
     @ManyToOne(() => machine)
     @JoinColumn({name: 'idMachine' })
-    idMachine: machine;
+    idMachine: number;
 
     @OneToMany(() => sale, (sale) => sale.idSale)
-    idSale: sale;
+    idSale: number;
 
 
 }

@@ -14,5 +14,5 @@ export class report {
 
     @ManyToOne(() => machine)
     @JoinColumn({name: 'idMachine'})
-    idMachine: machine;
+    idMachine: number;
 }

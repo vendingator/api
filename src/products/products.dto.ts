@@ -6,5 +6,5 @@ export class productsdto {
     sellingPrice: number;
     quantity: number;
     minimumQuantity: number;
-    idMachine: machine;
+    idMachine: number;
 }

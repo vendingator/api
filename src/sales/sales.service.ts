@@ -31,7 +31,7 @@ export class SalesService {
         return await findByID;
     }
 
-    async findOneFK(idProduct: product): Promise<sale | null> {
+    async findOneFK(idProduct: number): Promise<sale | null> {
         const findByFK = this.salesrepository.findOneBy({idProduct});
         if(!(await findByFK)) {
             throw new NotFoundException({message:'Product ID does not exist'})

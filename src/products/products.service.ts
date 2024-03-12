@@ -31,14 +31,14 @@ export class ProductsService {
         return await findByID;
     }
 
-    async findOneFK(idMachine: machine): Promise<product | null> {
-        const findByID = this.productRepository.findOneBy({idMachine});
-        if(!(await findByID)) {
-            throw new NotFoundException({message: 'Machine ID not found'});
-        }
+   // async findOneFK(idMachine: number): Promise<product[]> {
+    //    const findByID = this.productRepository.findOneBy(idMachine);
+     //   if(!(await findByID)) {
+     //        throw new NotFoundException({message: 'Machine ID not found'});
+     //    }
 
-        return await findByID;
-    }
+     //   return await findByID;
+   // }
 
     async create(dto: productsdto) {
         const newProduct = this.productRepository.create(dto);

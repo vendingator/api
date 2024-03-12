@@ -10,32 +10,32 @@ export class SalesController {
 
     }
 
-    @Get()
+    @Get('/get')
     async getAll() {
         return await this.salesservice.findAll();
     }
 
-    @Get(':idSale')
+    @Get('/get/ids:idSale')
     async getOne(@Param('idSale', ParseIntPipe) idSale:number) {
         return await this.salesservice.findOne(idSale);
     }
 
-    @Get(':idProduct')
-    async getOneFK(@Param('idProduct', ParseIntPipe) idProduct:product) {
+    @Get('/get/idp:idProduct')
+    async getOneFK(@Param('idProduct', ParseIntPipe) idProduct:number) {
         return await this.salesservice.findOneFK(idProduct);
     }
 
-    @Post()
+    @Post('/post')
     async create(@Body() dto:salesdto) {
         return await this.salesservice.create(dto);
     }
 
-    @Put(':idSale')
+    @Put('/put:idSale')
     async update(@Param('idSale', ParseIntPipe) idSale:number, @Body() dto: salesdto) {
         return await this.salesservice.update(idSale, dto);
     }
 
-    @Delete(':idSale')
+    @Delete('/delete:idSale')
     async delete(@Param('idSale', ParseIntPipe) idSale:number) {
         return await this.salesservice.delete(idSale);
     }

@@ -8,27 +8,27 @@ export class MachinesController {
 
     constructor(private machinesservice: MachinesService) {}
 
-    @Get()
+    @Get('/get')
     async getAll() {
         return await this.machinesservice.findAll();
     }
 
-    @Get(':idMachine')
+    @Get('/get/idm:idMachine')
     async getOne(@Param('idMachine', ParseIntPipe) idMachine: number) {
         return await this.machinesservice.findOne(idMachine);
     }
 
-    @Post()
+    @Post('/post')
     async create(@Body() dto: machinesdto) {
         return await this.machinesservice.create(dto);
     }
 
-    @Put(':idMachine')
+    @Put('/put:idMachine')
     async update(@Param('idMachine', ParseIntPipe) idMachine: number, @Body() dto: machinesdto) {
         return await this.machinesservice.update(idMachine, dto);
     }
 
-    @Delete(':idMachine')
+    @Delete('/delete:idMachine')
     async delete(@Param('idMachine', ParseIntPipe) idMachine: number) {
         return await this.machinesservice.delete(idMachine);
     }

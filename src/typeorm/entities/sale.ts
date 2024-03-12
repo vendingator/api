@@ -14,5 +14,5 @@ export class sale {
 
     @ManyToOne(() => product)
     @JoinColumn({name: 'idProduct'})
-    idProduct: product;
+    idProduct: number;
 }

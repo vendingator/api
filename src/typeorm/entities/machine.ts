@@ -18,9 +18,9 @@ export class machine {
     location: string;
 
     @OneToMany(() => product, (product) => product.idMachine)
-    idProduct: product;
+    idProduct: number;
 
     @OneToMany(() => report, (report) => report.idMachine)
-    idReport: report;
+    idReport: number;
 
 }
